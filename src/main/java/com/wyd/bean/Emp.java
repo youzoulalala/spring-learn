@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.stereotype.Component;
 
 @Data
-@Component
+@Component("employee")
 public class Emp {
     private String ename;
     private String gender;

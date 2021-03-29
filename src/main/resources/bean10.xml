@@ -9,5 +9,5 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 <!--    开启注解扫描-->
-    <context:component-scan base-package="com.wyd.bean"></context:component-scan>
+    <context:component-scan base-package="com.wyd"></context:component-scan>
 </beans>
