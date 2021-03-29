@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <!-- 自动装配
+            byName|byType
+    -->
+    <bean id="emp" class="com.wyd.autowire.Emp" autowire="byType">
+        <property name="ename" value="周杰伦"></property>
+        <property name="gender" value="男"></property>
+<!--        手动装配-->
+<!--        <property name="dept" ref="dept"></property>-->
+    </bean>
+
+    <bean id="dept" class="com.wyd.autowire.Dept">
+        <property name="dname" value="财务部门"></property>
+    </bean>
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<!--    XML 方式创建对象-->
+<!--    常用属性：
+            id:容器中的对象标识
+            class：创建对象的全限定名
+-->
+    <!--默认执行无参构造函数来创建对象-->
+    <bean id="user" class="com.wyd.User"></bean>
+
+    <!--set方法注入依赖-->
+    <bean id="book" class="com.wyd.Book">
+        <property name="bname" value="spring book"></property>
+        <!--    特殊字面量： null, 特殊符号-->
+        <property name="address"><null></null></property>
+    <!--<property name="bauthor" value="&lt;&lt;上海&gt;&gt;"></property>-->
+        <property name="bauthor">
+            <value><![CDATA[<<上海>>]]></value>
+        </property>
+    </bean>
+
+    <!--有参构造函数注入-->
+    <bean id="order" class="com.wyd.Order">
+        <constructor-arg name="oname" value="郭德纲"></constructor-arg>
+        <constructor-arg index="1" value="shanghai"></constructor-arg>
+    </bean>
+
+
+
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<!--    scope 指定 bean的生命周期-->
+<!--    singleton 单例,默认,随容器创建-->
+<!--    prototype 多例,获取对象时创建-->
+    <bean id="book" class="com.wyd.Book" scope="singleton" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="bname" value="spring book"></property>
+        <property name="address"><null></null></property>
+        <property name="bauthor">
+            <value><![CDATA[<<上海>>]]></value>
+        </property>
+    </bean>
+
+<!--    后置处理器-->
+    <bean id="processor" class="com.wyd.bean.myPostProcessor"></bean>
+</beans>

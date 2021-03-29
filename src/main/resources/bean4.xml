@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+    <util:list id="emplist">
+        <value>员工01</value>
+        <value>员工02</value>
+        <value>员工03</value>
+    </util:list>
+
+
+    <bean id="dept" class="com.wyd.bean.Dept">
+        <property name="dname" value="测试集合注入"></property>
+<!--        array 类型注入-->
+        <property name="empArray">
+            <array>
+                <value>员工01</value>
+                <value>员工02</value>
+<!--                集合中的元素为复杂类型-->
+<!--                <ref></ref>-->
+            </array>
+        </property>
+
+<!--        list 类型注入-->
+        <property name="empList" ref="emplist"></property>
+<!--        map 类型注入-->
+        <property name="empMap">
+            <map>
+                <entry key="01" value="员工01"></entry>
+                <entry key="02" value="员工02"></entry>
+            </map>
+        </property>
+    </bean>
+</beans>
